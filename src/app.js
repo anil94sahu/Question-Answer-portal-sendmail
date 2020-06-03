@@ -9,19 +9,19 @@ const details = require("./details.json");
 const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
-// app.use('./.netlify/functions/api')
+// app.use('/.netlify/functions/api');
 
 app.listen(3000, () => {
     console.log("The server started on port 3000 !!!!!!");
 });
 
-app.get("/", (req, res) => {
+app.get("/.netlify/functions/api", (req, res) => {
     res.send(
         "<h1 style='text-align: center'>Wellcome to FunOfHeuristic <br><br>😃👻😃👻😃👻😃👻😃</h1>"
     );
 });
 
-app.post("/sendmail", (req, res) => {
+app.post("/.netlify/functions/api/sendmail", (req, res) => {
     console.log("request came");
     let user = req.body;
     sendMail(user, info => {
