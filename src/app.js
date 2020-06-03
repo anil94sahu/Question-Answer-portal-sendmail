@@ -1,3 +1,4 @@
+const serverless = require('serverless-http')
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -88,3 +89,4 @@ async function sendMail(user, callback) {
 }
 
 // main().catch(console.error);
+module.exports.handler = serverless(app)
