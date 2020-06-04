@@ -15,13 +15,13 @@ app.listen(PORT, () => {
     console.log("The server started on port 3000 !!!!!!");
 });
 
-app.get("/.netlify/functions/api", (req, res) => {
+app.get("/", (req, res) => {
     res.send(
         "<h1 style='text-align: center'>Wellcome to FunOfHeuristic <br><br>😃👻😃👻😃👻😃👻😃</h1>"
     );
 });
 
-app.post("/.netlify/functions/api/sendmail", (req, res) => {
+app.post("/sendmail", (req, res) => {
     console.log("request came");
     let user = req.body;
     sendMail(user, info => {
