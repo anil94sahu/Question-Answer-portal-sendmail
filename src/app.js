@@ -46,41 +46,7 @@ async function sendMail(user, callback) {
         from: 'anil94sahu@gmail.com', // sender address
         to: user.email, // list of receivers
         subject: `Re: ${user.question}`, // Subject line
-        html: `
-          <p><strong>Hare Krishna ${user.name} pr</strong></p>
-            <br>
-            <p>
-                Thank you for asking question.
-            </p>
-            <p>
-                Below is the answer of your question
-            </p>
-            <br>
-            <p>
-                <b>Question :</b> ${user.question}
-            </p>
-            <p>
-                <b>Answer : </b> ${user.answer}
-            </p>
-            <p>
-                <b>Link for audio : </b> ${user.recordAnswer}
-            </p>
-            <p>
-                <b>Link for Attachment : </b> ${user.recordAnswer}
-            </p>
-
-            <br>
-            <p>
-                <b>
-                    Your Servant  
-                </b>
-            </p>
-            <p>
-                <strong>
-                    Pune voice team
-                </strong>
-          </p>
-          `
+        html: user.body
     };
 
     // send mail with defined transport object
