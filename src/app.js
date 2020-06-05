@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/sendmail", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     console.log("request came");
     let user = req.body;
     sendMail(user, info => {
