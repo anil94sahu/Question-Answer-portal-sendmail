@@ -7,25 +7,8 @@ const PORT = process.env.PORT || 3000;
 const details = require("./details.json");
 
 const app = express();
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
-app.use(function(req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://question-answer-portal.netlify.app');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-
-    // Pass to next layer of middleware
-    next();
-});
 
 app.use(bodyParser.json());
 // app.use('/.netlify/functions/api');
